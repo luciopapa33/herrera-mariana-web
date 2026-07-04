@@ -41,7 +41,10 @@
             <img src="Mariana Herrera logo 2-02.jpg.jpeg" alt="Mariana Herrera Logo" class="logo-img">
             <span>MARIANA HERRERA</span>
         </a>
-        <nav>
+        <div class="hamburger" id="hamburgerMenu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav id="navMenu">
             <a href="index.html">Home</a>
             <a href="localization-services.html">Services</a>
             <a href="translate-english-spanish.html">Expertise</a>
@@ -142,6 +145,23 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
     </script>
 </body>
 
